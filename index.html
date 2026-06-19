@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11</title>
+    <link rel="stylesheet" href="window.css">
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="quick/quick.css">
+    <link rel="stylesheet" href="panel/panel.css">
+    <link rel="stylesheet" href="shut/shut.css">
+    <link rel="stylesheet" href="search/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <main>
+        <div id="brightness-overlay"></div>
+        <div id="night-light"></div>
+        <div class="screen">
+            <div class="sub_screen"></div>
+
+            <div class="right_click">
+                <div class="context-menu">
+                    <div class="left">
+                        <div class="menu-item has-submenu" id="view">
+                            <span>⊞ View</span>
+                            <span>›</span>
+                        </div>
+                        <div class="menu-item" id="sort">
+                            <span>↕ Sort </span>
+                        </div>
+                        <div class="menu-item" id="refresh">
+                            <span>↻ Refresh</span>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="menu-item">
+                            <span>↶ Undo Rename</span>
+                        </div>
+                        <div class="menu-item " id="newFolderBtn">
+                            <span>⊕ New</span>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="menu-item" id="wallpaper">
+                            <span>Change Wallpaper</span>
+                        </div>
+                        <div class="menu-item">
+                            <span>🖌 Personalize</span>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="menu-item">
+                            <span>⌨ Open in Terminal</span>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="menu-item">
+                            <span>🗔 Show more options</span>
+                        </div>
+                    </div>
+                    <div class="right" id="subView">
+                        <div class="submenu" id="view-submenu">
+
+                            <div class="menu-item large">
+                                <span>◻ Large icons</span>
+                            </div>
+
+                            <div class="menu-item medium">
+                                <span>● Medium icons</span>
+                            </div>
+
+                            <div class="menu-item menuActive small">
+                                <span>◽ Small icons</span>
+                            </div>
+
+                            <div class="separator"></div>
+
+                            <div class="menu-item">
+                                <span>☑ Auto arrange icons</span>
+                            </div>
+
+                            <div class="menu-item">
+                                <span>✓ Align icons to grid</span>
+                            </div>
+
+                            <div class="menu-item">
+                                <span>✓ Show desktop icons</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quick Settings -->
+            <div class="quick-settings">
+                <div class="tiles">
+                    <div class="tile active">
+                        <span>📶</span>
+                        <span>WiFi</span>
+                    </div>
+                    <div class="tile active">
+                        <span>🅱</span>
+                        <span>Bluetooth</span>
+                    </div>
+                    <div class="tile">
+                        <span>✈</span>
+                        <span>Airplane</span>
+                    </div>
+                    <div class="tile active">
+                        <span>🔋</span>
+                        <span>Battery Saver</span>
+                    </div>
+                    <div class="tile" id="night">
+                        <span>☀</span>
+                        <span>Night Light</span>
+                    </div>
+                    <div class="tile">
+                        <span>📡</span>
+                        <span>Hotspot</span>
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <span>☀</span>
+                    <input type="range" value="30" id="brightness-slider">
+                </div>
+                <div class="slider-group">
+                    <span>🔊</span>
+                    <input type="range" value="50">
+                </div>
+                <div class="footer">
+                    <div class="battery">
+                        🔋 82%
+                    </div>
+                    <div class="settings">
+                        ⚙
+                    </div>
+
+                </div>
+            </div>
+            <div class="window-container">
+                <div class="resize n"></div>
+                <div class="resize s"></div>
+                <div class="resize e"></div>
+                <div class="resize w"></div>
+                <div class="resize ne"></div>
+                <div class="resize nw"></div>
+                <div class="resize se"></div>
+                <div class="resize sw"></div>
+                <header class="toolbar">
+                    <div class="topPanel">
+                        <div class="tabsPanel">
+                            <div class="tabPanel active">
+                                <span class="title" id="headTag">🏠 Home</span>
+                                <span class="close">×</span>
+                            </div>
+                            <div class="new-tab">+</div>
+                        </div>
+                        <div class="window-controls">
+                            <button id="minimizePanel">−</button>
+                            <button id="maximizePanel">▢</button>
+                            <button id="closePanel">✕</button>
+                        </div>
+                    </div>
+                    <div class="bottomPanel">
+                        <div class="nav-buttons">
+                            <button><i class="fa-solid fa-arrow-left"></i></button>
+                            <button><i class="fa-solid fa-arrow-right"></i></button>
+                            <button><i class="fa-solid fa-arrow-up"></i></button>
+                            <button><i class="fa-solid fa-rotate-right"></i></button>
+                        </div>
+                        <div class="address_bar">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-right separator"></i>
+                        </div>
+                        <div class="search_bar">
+                            <input type="text" placeholder="Search Home">
+                        </div>
+                    </div>
+                </header>
+                <div class="action-ribbon">
+                    <div class="ribbon-group">
+                        <button class="btn-new"><i class="fa-solid fa-plus text-blue"></i> New <i
+                                class="fa-solid fa-chevron-down small-chevron"></i></button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="ribbon-group icons-only">
+                        <button><i class="fa-solid fa-scissors"></i></button>
+                        <button><i class="fa-solid fa-copy"></i></button>
+                        <button><i class="fa-solid fa-paste"></i></button>
+                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="ribbon-group">
+                        <button><i class="fa-solid fa-arrow-down-short-wide"></i> Sort <i
+                                class="fa-solid fa-chevron-down small-chevron"></i></button>
+                        <button><i class="fa-solid fa-list"></i> View <i
+                                class="fa-solid fa-chevron-down small-chevron"></i></button>
+                        <button><i class="fa-solid fa-filter"></i> Filter <i
+                                class="fa-solid fa-chevron-down small-chevron"></i></button>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <aside class="sidebar">
+                        <ul class="nav-list">
+                            <li class="active" id="home"><i class="fa-solid fa-house text-blue"></i> Home</li>
+                            <li id="gallery"><i class="fa-solid fa-images text-orange"></i> Gallery</li>
+                            <li id="oneDrive"><i class="fa-solid fa-cloud text-blue"></i> OneDrive</li>
+                        </ul>
+                        <hr class="sidebar-divider">
+                        <ul class="nav-list">
+                            <li id="desktop"><i class="fa-solid fa-desktop"></i> Desktop</li>
+                            <li id="download"><i class="fa-solid fa-arrow-down"></i> Downloads</li>
+                            <li id="pictures"><i class="fa-solid fa-image"></i> Pictures</li>
+                            <li id="document"><i class="fa-solid fa-file-lines"></i> Documents</li>
+                            <li id="music"><i class="fa-solid fa-music"></i> Music</li>
+                            <li id="video"><i class="fa-solid fa-video"></i> Videos</li>
+                        </ul>
+                    </aside>
+                    <main class="explorer-view">
+                        <h3 id="empty">Empty</h3>
+                        <section class="section-block" id="section-block1">
+                            <h2 class="section-title"><i class="fa-solid fa-chevron-down"></i> Quick access</h2>
+                            <div class="quick-access-grid">
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-desktop card-icon text-blue"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">Desktop</span>
+                                        <span class="folder-loc">Stored locally</span>
+                                    </div>
+                                </div>
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-arrow-down card-icon text-green"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">Downloads</span>
+                                        <span class="folder-loc">Stored locally</span>
+                                    </div>
+                                </div>
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-image card-icon text-blue-light"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">Pictures</span>
+                                        <span class="folder-loc">Stored locally</span>
+                                    </div>
+                                </div>
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-file-lines card-icon text-blue"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">Documents</span>
+                                        <span class="folder-loc">Stored locally</span>
+                                    </div>
+                                </div>
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-folder card-icon text-yellow"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">TwoWayBinding</span>
+                                        <span class="folder-loc">Local Disk (D:)</span>
+                                    </div>
+                                </div>
+                                <div class="folder-card">
+                                    <i class="fa-solid fa-folder card-icon text-yellow"></i>
+                                    <div class="card-info">
+                                        <span class="folder-name">Image-Editor</span>
+                                        <span class="folder-loc">Local Disk (D:)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section-block" id="section-block2">
+                            <div class="tabs-header">
+                                <span class="tab active">Recent</span>
+                                <span class="tab">Favorites</span>
+                                <span class="tab">Shared</span>
+                            </div>
+
+                            <div class="files-table">
+                                <div class="table-header">
+                                    <div class="col-name">Name</div>
+                                    <div class="col-date">Date accessed</div>
+                                </div>
+
+                                <div class="table-row">
+                                    <div class="col-name">
+                                        <i class="fa-solid fa-video text-purple"></i>
+                                        <span>Screen Recording 2026-06-12 202730</span>
+                                    </div>
+                                    <div class="col-date">13-06-2026 20:31</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col-name">
+                                        <i class="fa-solid fa-image text-blue-light"></i>
+                                        <span>ducati-3840x2160-26499</span>
+                                    </div>
+                                    <div class="col-date">13-06-2026 16:51</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col-name">
+                                        <i class="fa-solid fa-image text-red"></i>
+                                        <span>spiderman</span>
+                                    </div>
+                                    <div class="col-date">13-06-2026 16:45</div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </main>
+                    <main class="explorer-view-desktopIcon">
+                        <!-- <div class="desktopIcon" value="${item.value}">
+                            <img src="img/pc.png" width="48" alt="">
+                            <span>This_PC</span>
+                        </div> -->
+                    </main>
+                    <main id="exploreGallery">
+                        <!-- <img src="img/editor.png" alt="" width="80px" height="80px"> -->
+                    </main>
+                    <main id="pictureBtn">
+                        <!-- <img src="img/editor.png" alt="" width="80px" height="80px"> -->
+                    </main>
+                    <main id="exploreVideo">
+
+                    </main>
+                </div>
+            </div>
+
+            <div class="start-menu">
+
+                <div class="search-container">
+                    <input type="text" placeholder="Search for apps, settings, and documents" id="startMenuSearch">
+                </div>
+
+                <div class="pinned-header">
+                    <h3>Pinned</h3>
+                    <button>Show less</button>
+                </div>
+
+                <div class="pinned-apps">
+
+                    <div class="app">
+                        <img src="img/chrome.png">
+                        <span>Chrome</span>
+                    </div>
+
+                    <div class="app">
+                        <img src="img/file.png">
+                        <span>Explorer</span>
+                    </div>
+
+                    <div class="app">
+                        <img src="img/vs_code.png">
+                        <span>VS Code</span>
+                    </div>
+
+                    <div class="app">
+                        <img src="img/intellij.png">
+                        <span>IntelliJ</span>
+                    </div>
+
+                    <div class="app">
+                        <img src="img/telegram.png">
+                        <span>Telegram</span>
+                    </div>
+
+                    <div class="app">
+                        <img src="img/discord.png">
+                        <span>Discord</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/kanbon.png">
+                        <span>Kanbon</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/snake.png">
+                        <span>Snake Game</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/editor.png">
+                        <span>Image Editor</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/spotify.png">
+                        <span>Spotify</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/camera.png">
+                        <span>Camera</span>
+                    </div>
+                    <div class="app">
+                        <img src="img/linkedin.png">
+                        <span>Linkedin</span>
+                    </div>
+
+                </div>
+
+                <div class="all-header">
+                    <h3>All</h3>
+                    <button>View: Category ▼</button>
+                </div>
+
+                <div class="categories">
+
+                    <div class="category-card">
+
+                        <div class="icons-grid">
+                            <img src="img/chrome.png">
+                            <img src="img/file.png">
+                            <img src="img/edge.png">
+                            <img src="img/ms-word.png">
+                        </div>
+
+                        <p>Productivity</p>
+
+                    </div>
+                    <div class="category-card">
+                        <div class="icons-grid">
+                            <img src="img/vs_code.png">
+                            <img src="img/intellij.png">
+                            <img src="img/github.png">
+                            <img src="img/terminal.png">
+                        </div>
+                        <p>Developer Tools</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="icons-grid">
+                            <img src="img/snipping.png">
+                            <img src="img/cal.png">
+                            <img src="img/store.png">
+                            <img src="img/setting.png">
+                        </div>
+                        <p>Utilities</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="icons-grid">
+                            <img src="img/whatsapp.png">
+                            <img src="img/telegram.png">
+                            <img src="img/discord.png">
+                            <img src="img/linkedin.png">
+                        </div>
+                        <p>Social</p>
+                    </div>
+
+                </div>
+
+                <div class="start-footer">
+
+                    <div class="profile">
+
+                        <div class="avatar">
+                            A
+                        </div>
+
+                        <span>Amit Kumar</span>
+
+                    </div>
+
+                    <button class="power-btn">
+                        ⏻
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="search-panel">
+                <div class="search-bar">
+                    <input type="text" value="" placeholder="Search" id="searchBar">
+                </div>
+                <div class="tabs">
+                    <button class="active">All</button>
+                    <button>Apps</button>
+                    <button>Documents</button>
+                    <button>Web</button>
+                    <button>Settings</button>
+                    <button>Folders</button>
+                    <button>Photos</button>
+                </div>
+
+                <div class="search-content">
+
+                </div>
+
+            </div>
+        </div>
+        <!-- The Taskbar Container -->
+        <div class="taskbar">
+            <!-- LEFT: Weather / Widget Area -->
+            <div class="taskbar-left">
+                <div class="weather-widget">
+                    <span class="weather-icon-uv">UV</span>
+                    <div class="weather-text">
+                        <span class="weather-status">Very high UV</span>
+                        <span class="weather-sub">Now</span>
+                    </div>
+                </div>
+            </div>
+            <!-- CENTER: Start Button, Search Box, and Apps -->
+            <div class="taskbar-center">
+                <!-- Windows Start Button -->
+                <button class="taskbar-btn start-btn" id="windowBtn">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="#0078d4"
+                            d="M0 0h11.2v11.2H0zm12.8 0H24v11.2H12.8zM0 12.8h11.2V24H0zm12.8 0H24V24H12.8z" />
+                    </svg>
+                </button>
+                <!-- Search Bar -->
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search" id="windowTaskSearch">
+                </div>
+                <!-- App Shortcuts -->
+                <div class="taskbar-btn" id="File_Explorer">
+                    <img src="img/file.png" alt="">
+                </div>
+                <div class="taskbar-btn">
+                    <img src="img/store.png" alt="">
+                </div>
+                <div class="taskbar-btn">
+                    <img src="img/edge.png" alt="">
+                </div>
+
+            </div>
+            <!-- RIGHT: System Tray & Clock -->
+            <div class="taskbar-right">
+                <button class="tray-icon"><i class="fa-solid fa-chevron-up"></i></button>
+
+                <!-- Network/Volume Status Pillar -->
+                <div class="status-pill">
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-volume-high"></i>
+                    <i class="fa-solid fa-battery-three-quarters"></i>
+                </div>
+
+                <!-- Language & Date/Time -->
+                <div class="datetime-pill">
+                    <div class="lang-text">ENG<br>IN</div>
+                    <div class="clock-text">
+                        <span>12:40</span>
+                        <span>14-06-2026</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="window.js"></script>
+    <script src="panel/panel.js"></script>
+    <script src="quick/quick.js"></script>
+    <script src="menu/menu.js"></script>
+    <script src="shut/shut.js"></script>
+</body>
+
+</html>

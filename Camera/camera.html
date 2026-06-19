@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera App</title>
+    <link rel="stylesheet" href="cemera.css">
+</head>
+<body>
+
+<div class="camera-container">
+
+    <video id="video" autoplay playsinline></video>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="flash"></div>
+
+    <div id="recordingTimer">
+        🔴 00:00
+    </div>
+
+    <div class="controls">
+        <button id="captureBtn">📷 Capture</button>
+        <button id="recordBtn">🎥 Record</button>
+        <button id="stopBtn">⏹️ Stop</button>
+    </div>
+
+</div>
+
+<script src="camera.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Notepad</title>
+    <link rel="stylesheet" href="notepad.css">
+</head>
+<body>
+    <div class="notepad">
+        <div class="titlebar">
+            <div class="logo">📝Notepad</div>
+        </div>
+        <div class="toolbar">
+            <button class="tool" id="new">New</button>
+            <button class="tool" id="open">Open</button>
+            <input type="file" id="fileInput" hidden>
+            <button class="tool" id="save">Save</button>
+            <button class="tool" id="copy">Copy</button>
+            <button class="tool" id="paste">Paste</button>
+        </div>
+        <div class="editor">
+            <textarea placeholder="Start writing your notes here..."></textarea>
+        </div>
+        <script src="notepad.js"></script>
+    </div>
+
+</body>
+
+</html>

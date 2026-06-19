@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.camera-container{
+    position:relative;
+    width:900px;
+    max-width:95%;
+    border-radius:15px;
+    overflow:hidden;
+    background:#111827;
+}
+
+video{
+    width:100%;
+    display:block;
+}
+
+canvas{
+    display:none;
+}
+
+.controls{
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    background:#1e293b;
+}
+
+button{
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#captureBtn{
+    background:#2563eb;
+    color:white;
+}
+
+#recordBtn{
+    background:#dc2626;
+    color:white;
+}
+
+#stopBtn{
+    background:#475569;
+    color:white;
+}
+
+#flash{
+    position:absolute;
+    inset:0;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+}
+
+.flash{
+    animation:flashAnimation .2s linear;
+}
+
+@keyframes flashAnimation{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+
+#recordingTimer{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:red;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    font-weight:bold;
+    display:none;
+}

@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f1117;
+    padding:20px;
+}
+
+.notepad{
+    width:900px;
+    height:600px;
+    background:#1a1d24;
+    border:1px solid #2d333b;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.5),
+        0 0 30px rgba(88,166,255,.1);
+}
+
+.titlebar{
+    height:55px;
+    background:#161b22;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid #2d333b;
+}
+
+.logo{
+    color:#58a6ff;
+    font-size:18px;
+    font-weight:600;
+}
+
+
+
+.toolbar{
+    height:50px;
+    background:#1f242d;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 15px;
+    border-bottom:1px solid #2d333b;
+}
+
+.tool{
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    background:#2d333b;
+    color:#e6edf3;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tool:hover{
+    background:#58a6ff;
+}
+
+.editor{
+    height:calc(100% - 155px);
+    display:flex;
+}
+
+.lines{
+    width:60px;
+    background:#161b22;
+    color:#6e7681;
+    text-align:right;
+    padding:20px 10px;
+    line-height:28px;
+    user-select:none;
+    border-right:1px solid #2d333b;
+}
+
+textarea{
+    flex:1;
+    border:none;
+    outline:none;
+    resize:none;
+    background:#1a1d24;
+    color:#e6edf3;
+    padding:20px;
+    font-size:16px;
+    line-height:28px;
+    caret-color:#58a6ff;
+}
+
+textarea::placeholder{
+    color:#6e7681;
+}
