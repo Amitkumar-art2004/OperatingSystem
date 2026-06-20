@@ -91,6 +91,15 @@ const windowTaskSearch = document.querySelector("#windowTaskSearch");
 const sub_screen = document.querySelector(".sub_screen");
 const windowContainer = document.querySelector(".window-container");
 const startMenu = document.querySelector(".start-menu");
+const header = document.createElement("header");
+const controlPanel = document.createElement("div");
+const minimizeBtn = document.createElement("button");
+const maximizeBtn = document.createElement("button");
+const closeBtn = document.createElement("button");
+const iframe = document.createElement("iframe");
+const newWindowPanel = document.createElement("div");
+const currentTime = document.querySelector("#currentTime")
+const currentDate = document.querySelector("#currentDate")
 function createIcon(size,imgSize) {
   Object.keys(windowIcon).forEach((key) => {
     const icon = document.createElement("div");
@@ -159,13 +168,6 @@ windowTaskSearch.addEventListener("input", function (e) {
 });
 
 
-const header = document.createElement("header");
-const controlPanel = document.createElement("div");
-const minimizeBtn = document.createElement("button");
-const maximizeBtn = document.createElement("button");
-const closeBtn = document.createElement("button");
-const iframe = document.createElement("iframe");
-const newWindowPanel = document.createElement("div");
 
 function createIconPanel(source){
   // console.log(source)
@@ -354,4 +356,13 @@ function startResize(e) {
 document.querySelectorAll(".resize").forEach((handle) => {
   handle.addEventListener("mousedown", startResize);
 });
+const date = new Date();
 
+const hours = String(date.getHours()).padStart(2, "0");
+const minute = String(date.getMinutes()).padStart(2, "0");
+const day = String(date.getDate()).padStart(2, "0");
+const month = String(date.getMonth() + 1).padStart(2, "0");
+const year = date.getFullYear();
+
+currentTime.innerHTML = `${hours}:${minute}`;
+currentDate.innerHTML = `${day}-${month}-${year}`;
